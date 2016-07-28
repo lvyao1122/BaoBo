@@ -1,0 +1,65 @@
+{
+	"html/tab-webview-main.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"html/tab-webview-subpage-about.html",
+			"css/mui.min.css",
+			"images/item-me@2x.png"
+		],
+		"refer": [
+			"html/tab-webview-subpage-setting.html",
+			"html/tab-webview-subpage-chat.html",
+			"html/tab-webview-subpage-contact.html",
+			"html/tab-webview-subpage-about.html"
+		]
+	},
+	"html/tab-webview-subpage-about.html": {
+		"resources": [
+			"images/01.png",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/zepto-min.js"
+		],
+		"refer": [
+			"html/addHouse.html"
+		]
+	},
+	"html/addHouse.html": {
+		"resources": [
+			"js/zepto-min.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": []
+	},
+	"html/tab-webview-subpage-contact.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": []
+	},
+	"html/tab-webview-subpage-chat.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": []
+	},
+	"userLogin.html": {
+		"resources": [
+			"images/01.png",
+			"js/common.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/zepto-min.js",
+			"js/md5.js",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"html/tab-webview-main.html"
+		]
+	}
+}

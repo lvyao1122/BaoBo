@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<style>
+			ul {
+				list-style: none outside none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			li {
+				margin-top: 20px;
+				margin-left: 20px;
+			}
+			
+			img {
+				width: 50px;
+				height: 50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li id="pushAdd"><b><img src="../images/01.png" /></b><span><h5>添加房间</h5></span></li>
+		</ul>
+		
+		
+		
+		
+		<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/zepto-min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			mui.init();
+			var addHouseView=null;
+			mui.plusReady(function() {
+			
+				pushadd();
+			});
+			$(document).ready(function(){
+				$("#pushAdd").click(function(){
+					addHouseView.show();
+				})
+			})
+
+			function pushadd() {
+				addHouseView = mui.preload({
+					url:"addHouse.html",
+					id:"addHouse"
+				})
+			}
+		</script>
+
+	</body>
+
+</html>

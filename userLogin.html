@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/common.js" ></script>
+    <script type="text/javascript" charset="UTF-8">
+      	mui.init(
+      		
+      	);
+    </script>
+    <style type="text/css">
+			body {
+				background-color: ghostwhite;
+			}
+			.mui-input-group｛
+				background-color:none;
+			
+			｝
+			
+			
+			.logo img {
+				width: 100px;
+				height: 100px;
+			}
+			
+			h5 {
+				color: #000000;
+				font-size: 20px;
+				margin-top: 0px;
+			}
+			
+			.login-div {
+				text-align: center;
+			}
+			
+			.mui-input-group input {
+				
+				top: 20px;
+				width: 70%;
+				height: 30px;
+				margin-top: 5px;
+				font-size: 15px;
+				border-width: 1px;
+				border-radius: 35px;
+				/*//圆角矩形属性*/
+				background-color: rgba(144, 144, 144, 0.3);
+			}
+			.mui-input-group{
+				
+				position: static!important;
+				background-color: transparent;
+				
+			}
+			.mui-input-row{
+				position: static!important;
+			}
+			.mui-input-group input:[placeholder] {
+				color: red;
+			}
+			
+			.loginbutton,
+			.sao {
+				width: 70%;
+				height: 30px;
+				margin-top: 20px;
+				font-size: 16px;
+				border-width: 1px;
+				border-color: grey;
+				border-radius: 5px;
+			}
+			
+			.loginbutton {
+				color: orange;
+			}
+			
+			.sao {
+				color: grey;
+			}
+			
+			.mui-input-group .mui-input-row:after｛
+								
+				height: 0px!important;
+				
+			｝
+		</style>
+
+</head>
+<body>
+	
+	<div class="logo" style="text-align: center; margin-top: 30%;">
+			<img src="images/01.png" />
+			<h5>宝泊智能</h5>
+	</div>
+		<div class="login-div">
+			<form id='login-form' class="mui-input-group">
+				<div class="mui-input-row">
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入主机ID">
+				</div>
+				<div class="mui-input-row">
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+				</div>
+
+			</form>
+			<div class="login-btn">
+
+				<button type="button" class="loginbutton" id="login" >系统登录</button>
+				<br/>
+				<button type="button" class="sao" onclick="clicked('html/barcode_scan.html',true,true)">
+				扫一扫
+			</button>
+			</div>
+		</div>
+		<script src="js/zepto-min.js"></script>
+		<script type="text/javascript" src="js/md5.js"></script>
+		<script type="text/javascript">
+		var gridWebView;
+		mui.plusReady(function(){
+			preloadPage();
+			gridWebView = plus.webview.getWebviewById("houseHome");
+		});
+	//dom节点加载完后触发
+	$(document).ready(function(){ 
+		//登录事件
+		document.getElementById("login").addEventListener("tap",function(){
+			if(checkForm()){
+				/*var userName = $("#account").val();//获取用户名
+				var passowrd = $("#password").val();//获取密码
+				passowrd = hex_md5(passowrd);*/
+				/*var userName = "18201162099";
+				var passowrd = "21218CCA77804D2BA1922C33E0151105";*/
+				/*$.ajax({
+					type:"get",
+					url:"http://123.56.176.67:8080/contractor/appRequest/appInfo.do?methodName=loginbgt&jsonString={'username':'"+ userName +"','password':'" + passowrd + "'}",
+					dataType:"json",
+					timeout:'2000',//请求超时时间单位毫秒
+					success:function(re){//请求成功
+						//re 就是下面这个JSON对象,现在他是一个对象,  [对象].[属性名] 就可以拿到值
+						// {
+						// "data":{"id":1,"password":"21218cca77804d2ba1922c33e0151105","regdate":1456109831000,"username":"18201162099"},
+						//"message":"登录成功",
+						//  "result":"1"
+						// }
+						//mui.alert(re.message,"message");
+						//mui.alert(re.result,"result");
+						gridWebView.show();
+						
+					},
+					error:function(){//请求失败
+						mui.alert("失败")
+					}
+				});*/
+				
+				gridWebView.show();
+			}
+		},false);
+	});
+		
+			 /** * 检查用户名,密码是否输入 */
+			function checkForm() {
+				var accountVal = $.trim($("#account").val());
+				var passwordVal = $.trim($("#password").val());
+				if (!accountVal) {
+					mui.alert("请输入用户名!", "温馨提示") 
+					return false;
+				}
+				if (!passwordVal) {
+					mui.alert("请输入密码!", "温馨提示")
+					return false;
+				}
+				return true;
+			} /** * 预加载跳转页面 */
+			function preloadPage() {
+				
+				mui.preload({
+					url: 'html/tab-webview-main.html', //这是预加载页面的路径 id:"grid"
+					id:"houseHome"
+					})
+				}
+		</script>
+	
+</body>
+</html>
