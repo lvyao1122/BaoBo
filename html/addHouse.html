@@ -140,7 +140,7 @@
 		$(document).ready(function(){
 			$(".house-type").click(function(){
 				$(this).addClass("type-active").siblings().removeClass("type-active");
-			})
+			})			
 			$("#ly").click(function(){
 				mui.fire(houseHome,"addGoHome",{
 					id:$(".type-active").attr("data-type"),
@@ -148,10 +148,9 @@
 				});
 				setTimeout(function(){
 					houseHome.show();
-				},100)
+				},100);
 			})
 		})
-			
 			
 		</script>
 	</body>
