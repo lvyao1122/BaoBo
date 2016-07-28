@@ -29,7 +29,7 @@
 	</head>
 
 	<body>
-		<ul>
+		<ul id="houseList">
 			<li id="pushAdd"><b><img src="../images/01.png" /></b><span><h5>添加房间</h5></span></li>
 		</ul>
 		
@@ -57,6 +57,11 @@
 					id:"addHouse"
 				})
 			}
+			document.addEventListener("addGoHome",function(e){
+				mui.fire(self,"gohome");
+				mui.alert(e.detail.id)
+				mui.alert(e.detail.name)
+			});
 		</script>
 
 	</body>
