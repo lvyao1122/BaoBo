@@ -118,6 +118,7 @@
 		<script type="text/javascript" src="js/md5.js"></script>
 		<script type="text/javascript">
 		var gridWebView;
+		var account={};
 		mui.plusReady(function(){
 			preloadPage();
 			gridWebView = plus.webview.getWebviewById("houseHome");
@@ -126,13 +127,15 @@
 	$(document).ready(function(){ 
 		//登录事件
 		document.getElementById("login").addEventListener("tap",function(){
+			isLogin();
+			var userName,passowrd;
 			if(checkForm()){
-				/*var userName = $("#account").val();//获取用户名
-				var passowrd = $("#password").val();//获取密码
-				passowrd = hex_md5(passowrd);*/
+				userName = $("#account").val();//获取用户名
+				passowrd = $("#password").val();//获取密码
+				passowrd = hex_md5(passowrd);
 				/*var userName = "18201162099";
 				var passowrd = "21218CCA77804D2BA1922C33E0151105";*/
-				/*$.ajax({
+				$.ajax({
 					type:"get",
 					url:"http://123.56.176.67:8080/contractor/appRequest/appInfo.do?methodName=loginbgt&jsonString={'username':'"+ userName +"','password':'" + passowrd + "'}",
 					dataType:"json",
@@ -146,15 +149,18 @@
 						// }
 						//mui.alert(re.message,"message");
 						//mui.alert(re.result,"result");
+						mui.alert(userName)
+						account.userName = userName;
+						account.passowrd = passowrd;
+						localStorage.setItem("account",JSON.stringify(account));
 						gridWebView.show();
 						
 					},
 					error:function(){//请求失败
 						mui.alert("失败")
 					}
-				});*/
+				});
 				
-				gridWebView.show();
 			}
 		},false);
 	});
@@ -180,6 +186,26 @@
 					id:"houseHome"
 					})
 				}
+			/**
+			 * 检查是否登录过
+			 */
+			function isLogin (){
+				var isLogin =JSON.parse(localStorage.getItem("account"));
+				if(isLogin){
+					
+					$.ajax({
+						type:"get",
+						url:"http://123.56.176.67:8080/contractor/appRequest/appInfo.do?methodName=loginbgt&jsonString={'username':'"+ isLogin.userName +"','password':'" + isLogin.passowrd + "'}",
+						async:true,
+						success:function(){
+							gridWebView.show();
+						},
+						error:function(){
+							
+						}
+					});
+				}
+			}
 		</script>
 	
 </body>
