@@ -41,13 +41,23 @@
 
 
 .mui-bar .mui-title{color: #565656 !important;font-size:14px !important;}
-
-
-
-
-
-
-
+.grid-box{}
+.grid-box > div{text-align: center;padding:30px 0 18px 0;border-left:1px solid #f4f4f4;border-bottom:1px solid #f4f4f4;background-color:#FFF;}
+.grid-box a{border-radius:50%;width:50px;height:50px;margin:0 auto;position: relative;}
+.grid-box a span{position:absolute;left:50%;top:50%;font-size:21px;color:#787878;webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}
+.grid-box  p{font-size:12px;color:#9ba5af;margin:9px 0 0 0;}
+.border-1{border: 2px solid #438ee9 !important;}
+.border-2{border: 2px solid #01bcef !important;}
+.border-3{border: 2px solid #4c97f2 !important;}
+.border-4{border: 2px solid #33baab !important;}
+.border-5{border: 2px solid #09c6fd !important;}
+.border-6{border: 2px solid #01c0f4 !important;}
+.border-7{border: 2px solid #4b94f0 !important;}
+.border-8{border: 2px solid #06c9f9 !important;}
+.border-9{border: 2px solid #3ab3a2 !important;}
+.border-10{border: 2px solid #f96767 !important;}
+.border-11{border: 2px solid #ff6d0a !important;}
+.border-12{border: 2px solid #a8bdd0 !important;}
 
 
 
