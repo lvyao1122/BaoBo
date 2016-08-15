@@ -125,9 +125,11 @@
 		});
 	//dom节点加载完后触发
 	$(document).ready(function(){ 
+		isLogin();
 		//登录事件
 		document.getElementById("login").addEventListener("tap",function(){
-			isLogin();
+			console.log("自动登录");
+			
 			var userName,passowrd;
 			if(checkForm()){
 				userName = $("#account").val();//获取用户名
@@ -190,9 +192,10 @@
 			 * 检查是否登录过
 			 */
 			function isLogin (){
+				 
 				var isLogin =JSON.parse(localStorage.getItem("account"));
 				if(isLogin){
-					
+					console.log("判断是否登录");
 					$.ajax({
 						type:"get",
 						url:"http://123.56.176.67:8080/contractor/appRequest/appInfo.do?methodName=loginbgt&jsonString={'username':'"+ isLogin.userName +"','password':'" + isLogin.passowrd + "'}",
