@@ -12,21 +12,29 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+.icon-hongwai:before { content: "\e60e"; }
 .icon-gonglu:before { content: "\e600"; }
 .icon-iconketing:before { content: "\e601"; }
+.icon-chuanglian:before { content: "\e60f"; }
 .icon-tianjia:before { content: "\e60d"; }
+.icon-jiankong:before { content: "\e610"; }
 .icon-chuang:before { content: "\e602"; }
 .icon-ertongleyuan:before { content: "\e603"; }
 .icon-icon8:before { content: "\e604"; }
 .icon-chufang:before { content: "\e605"; }
 .icon-keyongweiyu:before { content: "\e606"; }
 .icon-canting:before { content: "\e607"; }
+.icon-dianshi:before { content: "\e611"; }
+.icon-deng:before { content: "\e612"; }
 .icon-vidicon:before { content: "\e60c"; }
 .icon-weiyu:before { content: "\e608"; }
+.icon-kongtiao:before { content: "\e613"; }
 .icon-canting1:before { content: "\e609"; }
+.icon-Socket:before { content: "\e614"; }
 .icon-balcony:before { content: "\e60b"; }
 .icon-ertong:before { content: "\e60a"; }
-
 
 
 
